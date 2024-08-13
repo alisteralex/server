@@ -6,6 +6,7 @@ const axios = require('axios');
 const fs = require('fs').promises;
 const app = express()
 const path = require('path');
+const port = process.env.PORT || 5000;
 require("dotenv").config();
 
 app.use(cors())
@@ -70,10 +71,10 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 });
 
 
-// app.listen(5000,()=>{
-//     console.log("server is running");
+app.listen(port,()=>{
+    console.log("server is running");
     
-// })
+})
 
 
 
