@@ -70,10 +70,10 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 });
 
 
-app.listen(5000,()=>{
-    console.log("server is running");
+// app.listen(5000,()=>{
+//     console.log("server is running");
     
-})
+// })
 
 
 
