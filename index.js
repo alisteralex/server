@@ -48,7 +48,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
           messages: [{
               role: 'user',
             //   content: "Provide a summary of the RFP document in JSON format with keys for 'objective', 'description', 'value', 'duedate' and 'questiondate': " + textExtracted
-              content: "Provide a summary of the RFP document in JSON format with keys for 'objective', 'description', 'value', 'duedate' and 'questiondate': " + first5000Words
+              content: "Provide a summary of the RFP document in JSON format with keys for 'title','department','type','event_id','objective', 'description', 'value', 'date_of_release','date_of_clarification','date_of_submission','qualification_criteria','contract_term' and 'point_of_contact': " + first5000Words
             
         }]
       }, {
@@ -72,7 +72,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
 
 app.listen(port,()=>{
-    console.log("server is running");
+    console.log("server is running on port ",port);
     
 })
 
