@@ -35,10 +35,10 @@ app.post('/upload', upload.single('file'), async (req, res) => {
   const textExtracted = data.text; //extract the text from that array
 
 
-//   //Process text to extract the first 500 words
-//   const words = textExtracted.split(/\s+/);
-//   const first500Words = words.slice(0, 5000).join(' ');
-//   console.log(first500Words)
+  //Process text to extract the first 500 words
+  const words = textExtracted.split(/\s+/);
+  const first5000Words = words.slice(0, 5000).join(' ');
+  console.log(first5000Words)
 
 
 
@@ -47,8 +47,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
           model: "gpt-4",
           messages: [{
               role: 'user',
-              content: "Provide a summary of the RFP document in JSON format with keys for 'objective', 'description', 'value', 'duedate' and 'questiondate': " + textExtracted
-            //   content: "Provide a summary of the RFP document in JSON format with keys for 'objective', 'description', 'value', 'duedate' and 'questiondate': " + first500Words
+            //   content: "Provide a summary of the RFP document in JSON format with keys for 'objective', 'description', 'value', 'duedate' and 'questiondate': " + textExtracted
+              content: "Provide a summary of the RFP document in JSON format with keys for 'objective', 'description', 'value', 'duedate' and 'questiondate': " + first5000Words
             
         }]
       }, {
